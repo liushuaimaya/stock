@@ -8,7 +8,7 @@ export default function getStockPricePromise(codes) {
         const stockInfo = getStockInfo(code);
         codesInfo[code] = {
           name: getStockName(stockInfo),
-          price: getCurrentPrice(stockInfo),
+          price: getCurrentPrice(stockInfo)
         };
       });
       resolve(codesInfo);
@@ -29,7 +29,7 @@ export default function getStockPricePromise(codes) {
       }
     });
 
-    script.src = "http://hq.sinajs.cn/list=" + codeParas(codes);
+    script.src = "https://hq.sinajs.cn/list=" + codeParas(codes);
     document.head.appendChild(script);
   });
 

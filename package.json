@@ -2,7 +2,7 @@
   "name": "stock",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://liushuaimaya.github.io/stock",
+  "homepage": "https://liushuaimaya.github.io/stock",
   "dependencies": {
     "gh-pages": "^2.2.0",
     "jsonp": "^0.2.1",

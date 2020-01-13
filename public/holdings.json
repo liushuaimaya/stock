@@ -1,0 +1,222 @@
+[
+  {
+    "name": "刘帅",
+    "holdings": [
+      {
+        "code": "600028",
+        "quantity": 6200
+      },
+      {
+        "code": "600236",
+        "quantity": 25090
+      },
+      {
+        "code": "000651",
+        "quantity": 1400
+      },
+      {
+        "code": "002039",
+        "quantity": 2100
+      }
+    ]
+  },
+  {
+    "name": "王晓君",
+    "holdings": [
+      {
+        "code": "600036",
+        "quantity": 600
+      },
+      {
+        "code": "600886",
+        "quantity": 3200
+      },
+      {
+        "code": "601288",
+        "quantity": 1500
+      },
+      {
+        "code": "601328",
+        "quantity": 2000
+      },
+      {
+        "code": "601988",
+        "quantity": 9300
+      },
+      {
+        "code": "000002",
+        "quantity": 2600
+      },
+      {
+        "code": "000651",
+        "quantity": 400
+      },
+      {
+        "code": "002039",
+        "quantity": 1700
+      }
+    ]
+  },
+  {
+    "name": "张培",
+    "holdings": [
+      {
+        "code": "600016",
+        "quantity": 14160
+      },
+      {
+        "code": "000002",
+        "quantity": 2000
+      },
+      {
+        "code": "000895",
+        "quantity": 1300
+      },
+      {
+        "code": "000651",
+        "quantity": 500
+      }
+    ]
+  },
+  {
+    "name": "王振威",
+    "holdings": [
+      {
+        "code": "600036",
+        "quantity": 2900
+      },
+      {
+        "code": "000069",
+        "quantity": 9400
+      },
+      {
+        "code": "000002",
+        "quantity": 1300
+      }
+    ]
+  },
+  {
+    "name": "刘媛",
+    "holdings": [
+      {
+        "code": "000002",
+        "quantity": 4100
+      },
+      {
+        "code": "600036",
+        "quantity": 1000
+      },
+      {
+        "code": "601318",
+        "quantity": 700
+      }
+    ]
+  },
+  {
+    "name": "刘丰华",
+    "holdings": [
+      {
+        "code": "002039",
+        "quantity": 7000
+      },
+      {
+        "code": "600036",
+        "quantity": 2700
+      }
+    ]
+  },
+  {
+    "name": "王丽君",
+    "holdings": [
+      {
+        "code": "000895",
+        "quantity": 400
+      },
+      {
+        "code": "002039",
+        "quantity": 5700
+      },
+      {
+        "code": "600036",
+        "quantity": 2700
+      },
+      {
+        "code": "600236",
+        "quantity": 3380
+      },
+      {
+        "code": "600674",
+        "quantity": 1000
+      },
+      {
+        "code": "600886",
+        "quantity": 1700
+      }
+    ]
+  },
+  {
+    "name": "王世艳",
+    "holdings": [
+      {
+        "code": "002039",
+        "quantity": 7000
+      },
+      {
+        "code": "600236",
+        "quantity": 5330
+      },
+      {
+        "code": "600383",
+        "quantity": 2700
+      },
+      {
+        "code": "600886",
+        "quantity": 3300
+      },
+      {
+        "code": "601636",
+        "quantity": 6000
+      },
+      {
+        "code": "601318",
+        "quantity": 3000
+      },
+      {
+        "code": "601916",
+        "quantity": 1000
+      }
+    ]
+  },
+  {
+    "name": "刘文雷",
+    "holdings": [
+      {
+        "code": "002039",
+        "quantity": 7000
+      },
+      {
+        "code": "600236",
+        "quantity": 20800
+      }
+    ]
+  },
+  {
+    "name": "刘光兴",
+    "holdings": [
+      {
+        "code": "601318",
+        "quantity": 1200
+      }, {
+        "code": "002304",
+        "quantity": 700
+      }]
+  },
+  {
+    "name": "刘杰",
+     "holdings": [
+      {
+        "code": "601318",
+        "quantity": 1200
+      }]
+  }
+]

@@ -1,12 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React, { useState, useEffect } from "react";
+import ReactDOM from "react-dom";
+import AccountTables from "./StockComponents";
+import getAccounts from "./fetchData";
+import "./index.css";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const App = () => {
+  const [data, setData] = useState(null);
+  useEffect(() => {
+    getAccounts().then(setData);
+  }, []);
+  if (!data) return <div>Loading...</div>;
+  else return <AccountTables accounts={data} />;
+};
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+ReactDOM.render(<App />, document.getElementById("root"));

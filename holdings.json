@@ -162,28 +162,12 @@
         "quantity": 7000
       },
       {
-        "code": "600236",
-        "quantity": 5330
-      },
-      {
-        "code": "600383",
-        "quantity": 2700
-      },
-      {
         "code": "600886",
         "quantity": 3300
       },
       {
-        "code": "601636",
-        "quantity": 6000
-      },
-      {
         "code": "601318",
-        "quantity": 3000
-      },
-      {
-        "code": "601916",
-        "quantity": 1000
+        "quantity": 2300
       }
     ]
   },
@@ -206,17 +190,42 @@
       {
         "code": "601318",
         "quantity": 1200
-      }, {
+      },
+      {
         "code": "002304",
         "quantity": 700
-      }]
+      }
+    ]
   },
   {
     "name": "刘杰",
-     "holdings": [
+    "holdings": [
       {
         "code": "601318",
         "quantity": 1200
-      }]
+      },
+      {
+        "code": "002304",
+        "quantity": 600
+      }
+    ]
+  },
+  {
+    "name": "王中瑞",
+    "holdings": [
+      {
+        "code": "600036",
+        "quantity": 900
+      }
+    ]
+  },
+  {
+    "name": "崔巧琳",
+    "holdings": [
+      {
+        "code": "601318",
+        "quantity": 1100
+      }
+    ]
   }
 ]

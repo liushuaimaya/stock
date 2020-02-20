@@ -215,7 +215,7 @@
     "holdings": [
       {
         "code": "600036",
-        "quantity": 900
+        "quantity": 1300
       },
       {
         "code": "002304",
@@ -232,7 +232,7 @@
       },
       {
         "code": "002304",
-        "quantity": 200
+        "quantity": 100
       }
     ]
   }

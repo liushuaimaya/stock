@@ -1,4 +1,3 @@
-// import "./index.css";
 import getStockPricePromise from "./sinaFinanceApi";
 
 export default async function getAccounts() {

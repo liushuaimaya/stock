@@ -162,12 +162,8 @@
         "quantity": 7000
       },
       {
-        "code": "600886",
-        "quantity": 3300
-      },
-      {
         "code": "601318",
-        "quantity": 1700
+        "quantity": 1400
       }
     ]
   },
@@ -215,7 +211,7 @@
     "holdings": [
       {
         "code": "600036",
-        "quantity": 1300
+        "quantity": 2700
       },
       {
         "code": "002304",
@@ -232,7 +228,7 @@
       },
       {
         "code": "002304",
-        "quantity": 100
+        "quantity": 600
       }
     ]
   }

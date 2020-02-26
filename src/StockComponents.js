@@ -1,12 +1,13 @@
 import React from "react";
 // props: hasPercent 是否有百分比仓位
-const StockHeader = props => (
+const StockHeader = () => (
   <thead>
     <tr>
       <th>证券代码</th>
       <th>股票名称</th>
       <th>持仓</th>
       <th>现价</th>
+      <th>涨跌幅</th>
       <th>市值</th>
       <th>仓位</th>
     </tr>
@@ -15,11 +16,12 @@ const StockHeader = props => (
 
 // props: code stockName quantity price value percent
 const StockRow = props => (
-  <tr>
+  <tr className={props.change >= 0 ? "red" : "green"}>
     <td>{props.code}</td>
     <td>{props.stockName}</td>
     <td>{props.quantity}</td>
     <td>{props.price.toFixed(2)}</td>
+    <td>{props.change >= 0 ? "+" + props.change : props.change} %</td>
     <td>{props.value}</td>
     {props.percent && <td>{props.percent}</td>}
   </tr>
@@ -49,10 +51,16 @@ const AccountTables = ({ accounts }) => {
     <StockTable {...account} key={account.name}></StockTable>
   ));
   const totalAll = accounts[0].total;
+  const totalChange = accounts[0].totalChange;
   return (
     <div>
-      <h3>Total Holding: {Math.round(totalAll) + "元"}</h3>
-      <span>(含王丽君代管账户资产约16~17万)</span>
+      <h3>Total Holding: {Math.round(totalAll)} 元</h3>
+      <div>( 含王丽君代管账户资产约17万)</div>
+      <div>
+        相比昨日
+        {(totalChange >= 0 ? "增加" : "减少") + totalChange} 元 (
+        {((totalChange / totalAll) * 100).toFixed(2) + "%"})
+      </div>
       {accountsTables}
     </div>
   );

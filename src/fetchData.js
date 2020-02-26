@@ -56,19 +56,26 @@ function addTotalAccount(accounts, codesInfo) {
 
 // 为accounts添加totalAll字段(所有账户宗资产)
 // 为各个account添加 total字段(单个账户总资产)
-// 为每个account.holdings添加price(单只股票价格)和value字段(单只股票市值)
+// 为每个account.holdings添加price(单只股票价格) / change(涨跌幅) / value字段(单只股票市值)
 function addInfoToAccounts(accounts, codesInfo) {
   for (let i = 0; i < accounts.length; i++) {
-    let total = 0;
+    let total = 0,
+      totalY = 0;
     accounts[i].holdings.forEach(holding => {
       const price = codesInfo[holding.code].price;
+      const priceY = codesInfo[holding.code].priceY;
+      const change = ((price - priceY) / priceY) * 100;
       const value = price * holding.quantity;
+      const valueY = priceY * holding.quantity;
       total += value;
+      totalY += valueY;
       holding.stockName = codesInfo[holding.code].name;
       holding.price = Math.round(price * 100) / 100;
+      holding.change = Math.round(change * 100) / 100;
       holding.value = Math.round(value);
     });
     accounts[i].total = Math.round(total);
+    accounts[i].totalChange = Math.round(totalY - total);
     accounts[i].holdings.forEach(holding => {
       holding.percent =
         ((holding.value / accounts[i].total) * 100).toFixed(2) + "%";

@@ -6,11 +6,14 @@ export default function getStockPricePromise(codes) {
       let codesInfo = {};
       codes.forEach(code => {
         const stockInfo = getStockInfo(code);
+        const [price, priceY] = getPrice(stockInfo);
         codesInfo[code] = {
           name: getStockName(stockInfo),
-          price: getCurrentPrice(stockInfo)
+          price,
+          priceY
         };
       });
+      console.log(codesInfo);
       resolve(codesInfo);
 
       function getStockInfo(code) {
@@ -20,8 +23,9 @@ export default function getStockPricePromise(codes) {
         return eval(codeVar);
       }
 
-      function getCurrentPrice(stockInfo) {
-        return parseFloat(stockInfo.split(",")[3]);
+      function getPrice(stockInfo) {
+        const info = stockInfo.split(",");
+        return [parseFloat(info[3]), parseFloat(info[2])];
       }
 
       function getStockName(stockInfo) {

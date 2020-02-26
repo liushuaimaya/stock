@@ -1,8 +1,9 @@
 import getStockPricePromise from "./sinaFinanceApi";
+import STOCK_DATA_SOURCE from "./holdings";
 
 export default async function getAccounts() {
-  // 获取json文件内accounts对象
-  const accounts = await fetch("./holdings.json").then(it => it.json());
+  // 获取STOCK_DATA_SOURCE股票持仓
+  const accounts = STOCK_DATA_SOURCE;
 
   // 提取accounts内所有股票代码
   const codes = getCodes(accounts);

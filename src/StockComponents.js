@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 // props: hasPercent 是否有百分比仓位
 const StockHeader = props => (
   <thead>
@@ -19,7 +19,7 @@ const StockRow = props => (
     <td>{props.code}</td>
     <td>{props.stockName}</td>
     <td>{props.quantity}</td>
-    <td>{props.price}</td>
+    <td>{props.price.toFixed(2)}</td>
     <td>{props.value}</td>
     {props.percent && <td>{props.percent}</td>}
   </tr>
@@ -44,7 +44,7 @@ const StockTable = ({ holdings, name, total }) => {
 };
 
 // accounts-[holdings]-{}
-const AccountTables = ({accounts}) => {
+const AccountTables = ({ accounts }) => {
   const accountsTables = accounts.map(account => (
     <StockTable {...account} key={account.name}></StockTable>
   ));
@@ -56,6 +56,6 @@ const AccountTables = ({accounts}) => {
       {accountsTables}
     </div>
   );
-}
+};
 
 export default AccountTables;

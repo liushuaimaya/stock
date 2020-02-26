@@ -3,14 +3,55 @@
 }
 html {
   font-size: 12px;
+  background-color: #e2e2e2;
 }
-h3 {
-  font-size: 1.5em;
+@media (min-width: 600px) {
+  html {
+    font-size: 16px;
+  }
+}
+body {
+  margin: 0;
+  font-family: "SF Pro SC", "HanHei SC", "SF Pro Text", "Myriad Set Pro",
+    "SF Pro Icons", "Apple Legacy Chevron", "PingFang SC", "Helvetica Neue",
+    "Helvetica", "Arial", sans-serif;
+}
+/* box */
+.box {
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid #e2e2e2;
+  margin: 5px;
+  padding: 5px;
+}
+@media (min-width: 600px) {
+  .box {
+    margin: 20px 0;
+    padding: 10px;
+  }
+}
+#top {
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.22);
+}
+#top-center {
+  padding: 10px;
+}
+@media (min-width: 600px) {
+  #top-center {
+    width: 600px;
+    margin: 0 auto;
+  }
+}
+h2 {
+  margin: 0;
 }
 table {
   border-collapse: collapse;
   width: 100%;
-  margin: 1em 0;
 }
 caption {
   text-align: left;
@@ -30,10 +71,7 @@ td {
   border: 1px solid gray;
 }
 @media (min-width: 600px) {
-  html {
-    font-size: 16px;
-  }
-  body {
+  main {
     width: 600px;
     margin: 0 auto;
   }

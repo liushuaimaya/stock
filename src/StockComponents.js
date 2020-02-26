@@ -37,11 +37,13 @@ const StockTable = ({ holdings, name, total }) => {
     <StockRow {...holding} key={holding.code}></StockRow>
   ));
   return (
-    <table>
-      <StockCaption name={name} total={total} />
-      <StockHeader />
-      <tbody>{rows}</tbody>
-    </table>
+    <div className="box">
+      <table>
+        <StockCaption name={name} total={total} />
+        <StockHeader />
+        <tbody>{rows}</tbody>
+      </table>
+    </div>
   );
 };
 
@@ -54,14 +56,20 @@ const AccountTables = ({ accounts }) => {
   const totalChange = accounts[0].totalChange;
   const percent = ((totalChange / totalAll) * 100).toFixed(2) + "%";
   return (
-    <div>
-      <h3>Total Holding: {Math.round(totalAll)}元</h3>
-      <div>(含王丽君代管账户资产约17万)</div>
-      <div>
-        今日盈亏:{totalChange}({percent})
-      </div>
-      {accountsTables}
-    </div>
+    <>
+      <header id="top">
+        <div id="top-center">
+          <h2>Total Holding: {Math.round(totalAll)}元</h2>
+          <div>
+            今日盈亏: {totalChange}({percent})
+          </div>
+        </div>
+      </header>
+      <main>
+        <p className="box">(含王丽君代管账户资产约17万)</p>
+        {accountsTables}
+      </main>
+    </>
   );
 };
 

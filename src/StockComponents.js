@@ -21,7 +21,7 @@ const StockRow = props => (
     <td>{props.stockName}</td>
     <td>{props.quantity}</td>
     <td>{props.price.toFixed(2)}</td>
-    <td>{props.change >= 0 ? "+" + props.change : props.change} %</td>
+    <td>{props.change >= 0 ? "+" + props.change : props.change}%</td>
     <td>{props.value}</td>
     {props.percent && <td>{props.percent}</td>}
   </tr>
@@ -52,14 +52,13 @@ const AccountTables = ({ accounts }) => {
   ));
   const totalAll = accounts[0].total;
   const totalChange = accounts[0].totalChange;
+  const percent = ((totalChange / totalAll) * 100).toFixed(2) + "%";
   return (
     <div>
-      <h3>Total Holding: {Math.round(totalAll)} 元</h3>
-      <div>( 含王丽君代管账户资产约17万)</div>
+      <h3>Total Holding: {Math.round(totalAll)}元</h3>
+      <div>(含王丽君代管账户资产约17万)</div>
       <div>
-        相比昨日
-        {(totalChange >= 0 ? "增加" : "减少") + totalChange} 元 (
-        {((totalChange / totalAll) * 100).toFixed(2) + "%"})
+        今日盈亏:{totalChange}({percent})
       </div>
       {accountsTables}
     </div>

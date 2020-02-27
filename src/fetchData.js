@@ -75,7 +75,7 @@ function addInfoToAccounts(accounts, codesInfo) {
       holding.value = Math.round(value);
     });
     accounts[i].total = Math.round(total);
-    accounts[i].totalChange = Math.round(totalY - total);
+    accounts[i].totalChange = Math.round(total - totalY);
     accounts[i].holdings.forEach(holding => {
       holding.percent =
         ((holding.value / accounts[i].total) * 100).toFixed(2) + "%";

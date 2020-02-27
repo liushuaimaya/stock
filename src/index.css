@@ -32,13 +32,15 @@ body {
   }
 }
 #top {
-  position: sticky;
+  position: fixed;
+  z-index: 1;
   top: 0;
+  width: 100%;
   background-color: #fff;
   border-bottom: 1px solid rgba(0, 0, 0, 0.22);
-  z-index: 1;
 }
 #top-center {
+  line-height: 1.5;
   padding: 10px;
 }
 @media (min-width: 600px) {
@@ -51,8 +53,11 @@ h2 {
   margin: 0;
 }
 #daichi {
-  /* transition: 1s; */
-  animation: 2s ease-in-out 2s 1 daichi;
+  animation-name: daichi;
+  animation-duration: 2s;
+  animation-delay: 2s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
 }
 @keyframes daichi {
   from {
@@ -85,9 +90,12 @@ td {
   text-align: center;
   border: 1px solid gray;
 }
+main {
+  overflow: hidden;
+  margin: calc(10px * 2 + 1px + (1.5em + 1em) * 1.5) auto 0;
+}
 @media (min-width: 600px) {
   main {
     width: 600px;
-    margin: 0 auto;
   }
 }

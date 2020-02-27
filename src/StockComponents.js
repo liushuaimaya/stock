@@ -21,7 +21,7 @@ const StockRow = props => (
     <td>{props.stockName}</td>
     <td>{props.quantity}</td>
     <td>{props.price.toFixed(2)}</td>
-    <td>{props.change >= 0 ? "+" + props.change : props.change}%</td>
+    <td>{(props.change >= 0 ? "+" : "") + props.change.toFixed(2)}%</td>
     <td>{props.value}</td>
     {props.percent && <td>{props.percent}</td>}
   </tr>
@@ -70,7 +70,9 @@ const AccountTables = ({ accounts }) => {
         <div id="top-center">
           <h2>Total Holding: {Math.round(totalAll)}元</h2>
           <div>
-            今日盈亏: {totalChange}({percent})
+            今日盈亏: {totalChange > 0 && "+"}
+            {totalChange}({totalChange > 0 && "+"}
+            {percent})
           </div>
         </div>
       </header>

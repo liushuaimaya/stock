@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 // props: hasPercent 是否有百分比仓位
 const StockHeader = () => (
   <thead>
@@ -48,6 +48,14 @@ const StockTable = ({ holdings, name, total }) => {
 };
 
 // accounts-[holdings]-{}
+const SelfRemove = ({ el }) => {
+  const [element, setElement] = useState(el);
+  useEffect(() => {
+    setTimeout(() => setElement(null), 4000);
+  });
+  return element;
+};
+
 const AccountTables = ({ accounts }) => {
   const accountsTables = accounts.map(account => (
     <StockTable {...account} key={account.name}></StockTable>
@@ -55,6 +63,7 @@ const AccountTables = ({ accounts }) => {
   const totalAll = accounts[0].total;
   const totalChange = accounts[0].totalChange;
   const percent = ((totalChange / totalAll) * 100).toFixed(2) + "%";
+
   return (
     <>
       <header id="top">
@@ -66,7 +75,13 @@ const AccountTables = ({ accounts }) => {
         </div>
       </header>
       <main>
-        <p className="box">(含王丽君代管账户资产约17万)</p>
+        <SelfRemove
+          el={
+            <p id="daichi" className="box">
+              (含王丽君代管账户资产约17万)
+            </p>
+          }
+        />
         {accountsTables}
       </main>
     </>

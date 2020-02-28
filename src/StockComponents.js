@@ -51,7 +51,7 @@ const StockTable = ({ holdings, name, total }) => {
 const SelfRemove = ({ el }) => {
   const [element, setElement] = useState(el);
   useEffect(() => {
-    setTimeout(() => setElement(null), 4000);
+    setTimeout(() => setElement(null), 3000);
   });
   return element;
 };
@@ -63,6 +63,7 @@ const AccountTables = ({ accounts }) => {
   const totalAll = accounts[0].total;
   const totalChange = accounts[0].totalChange;
   const percent = ((totalChange / totalAll) * 100).toFixed(2) + "%";
+  console.log(accounts);
 
   return (
     <>
@@ -77,14 +78,8 @@ const AccountTables = ({ accounts }) => {
         </div>
       </header>
       <main>
-        <SelfRemove
-          el={
-            <p id="daichi" className="box">
-              (含王丽君代管账户资产约17万)
-            </p>
-          }
-        />
-        {accountsTables}
+        <SelfRemove el={<p id="daichi">(含王丽君代管账户资产约17万)</p>} />
+        <section id="tables">{accountsTables}</section>
       </main>
     </>
   );

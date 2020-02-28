@@ -13,7 +13,6 @@ export default function getStockPricePromise(codes) {
           priceY
         };
       });
-      console.log(codesInfo);
       resolve(codesInfo);
 
       function getStockInfo(code) {

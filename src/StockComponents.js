@@ -63,7 +63,6 @@ const AccountTables = ({ accounts }) => {
   const totalAll = accounts[0].total;
   const totalChange = accounts[0].totalChange;
   const percent = ((totalChange / totalAll) * 100).toFixed(2) + "%";
-  console.log(accounts);
 
   return (
     <>

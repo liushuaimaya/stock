@@ -10,7 +10,6 @@ export default async function getAccounts() {
 
   // 获取各股票代码对应股价和股票名称对象
   const codesInfo = await getStockPricePromise(codes);
-  console.log(codesInfo);
   // 增加codeInfo股票总数量
   addQuantityToCodesInfo(accounts, codesInfo);
 

@@ -37,7 +37,7 @@ const StockTable = ({ holdings, name, total }) => {
     <StockRow {...holding} key={holding.code}></StockRow>
   ));
   return (
-    <div className="box">
+    <div className="box box-shadow">
       <table>
         <StockCaption name={name} total={total} />
         <StockHeader />

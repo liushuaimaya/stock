@@ -216,6 +216,10 @@ const STOCK_DATA_SOURCE = [
       {
         code: "002304",
         quantity: 400
+      },
+      {
+        code: "000002",
+        quantity: 1200
       }
     ]
   },
@@ -229,6 +233,10 @@ const STOCK_DATA_SOURCE = [
       {
         code: "002304",
         quantity: 600
+      },
+      {
+        code: "000002",
+        quantity: 500
       }
     ]
   }

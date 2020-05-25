@@ -2,7 +2,7 @@
   "name": "stock",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://stock.vuee.me/",
+  "homepage": "https://noui.cn/stock",
   "dependencies": {
     "gh-pages": "^2.2.0",
     "jsonp": "^0.2.1",

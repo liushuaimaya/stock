@@ -33,7 +33,7 @@ function getCodes(accounts) {
 
 // 为codesInfo增加总数量
 function addQuantityToCodesInfo(accounts, codesInfo) {
-  Object.keys(codesInfo).forEach(key => (codesInfo[key].quantity = 0));
+  Object.keys(codesInfo).forEach((key) => (codesInfo[key].quantity = 0));
   for (let { holdings } of accounts) {
     for (let { code, quantity } of holdings) {
       codesInfo[code].quantity += quantity;
@@ -47,7 +47,7 @@ function addTotalAccount(accounts, codesInfo) {
     totalHoldings.push({
       code,
       stockName: codesInfo[code].name,
-      quantity: codesInfo[code].quantity
+      quantity: codesInfo[code].quantity,
     });
   }
   accounts.unshift({ name: "总计", holdings: totalHoldings });
@@ -59,13 +59,17 @@ function addTotalAccount(accounts, codesInfo) {
 function addInfoToAccounts(accounts, codesInfo) {
   for (let i = 0; i < accounts.length; i++) {
     let total = 0,
-      totalY = 0;
-    accounts[i].holdings.forEach(holding => {
+      totalY = 0,
+      totalSH = 0,
+      totalSZ = 0;
+    accounts[i].holdings.forEach((holding) => {
       const price = codesInfo[holding.code].price;
       const priceY = codesInfo[holding.code].priceY;
       const change = ((price - priceY) / priceY) * 100;
       const value = price * holding.quantity;
       const valueY = priceY * holding.quantity;
+      if (holding.code.startsWith("6")) totalSH += value;
+      else totalSZ += value;
       total += value;
       totalY += valueY;
       holding.stockName = codesInfo[holding.code].name;
@@ -74,8 +78,10 @@ function addInfoToAccounts(accounts, codesInfo) {
       holding.value = Math.round(value);
     });
     accounts[i].total = Math.round(total);
+    accounts[i].totalSH = Math.round(totalSH / 1000) / 10;
+    accounts[i].totalSZ = Math.round(totalSZ / 1000) / 10;
     accounts[i].totalChange = Math.round(total - totalY);
-    accounts[i].holdings.forEach(holding => {
+    accounts[i].holdings.forEach((holding) => {
       holding.percent =
         ((holding.value / accounts[i].total) * 100).toFixed(2) + "%";
     });

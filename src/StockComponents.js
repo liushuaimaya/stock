@@ -15,7 +15,7 @@ const StockHeader = () => (
 );
 
 // props: code stockName quantity price value percent
-const StockRow = props => (
+const StockRow = (props) => (
   <tr className={props.change >= 0 ? "red" : "green"}>
     <td>{props.code}</td>
     <td>{props.stockName}</td>
@@ -27,21 +27,31 @@ const StockRow = props => (
   </tr>
 );
 
-const StockCaption = ({ name, total }) => (
-  <caption>{name + ": " + total + "元"}</caption>
-);
-
+const StockCaption = ({ name, total, totalSH, totalSZ, tech }) => {
+  const diffSH = Math.round((totalSH - (tech ? 14 : 12)) * 10) / 10;
+  const diffSZ = Math.round((totalSZ - 12) * 10) / 10;
+  return (
+    <caption>{`${name}: ${total}元,  其中上海差额约${diffSH}万元, 深圳约${diffSZ}万元`}</caption>
+  );
+};
 // props: holdings[holding], name, total
-const StockTable = ({ holdings, name, total }) => {
-  const rows = holdings.map(holding => (
-    <StockRow {...holding} key={holding.code}></StockRow>
-  ));
+const StockTable = ({ holdings, name, total, totalSH, totalSZ, tech }) => {
   return (
     <div className="box box-shadow">
       <table>
-        <StockCaption name={name} total={total} />
+        <StockCaption
+          name={name}
+          total={total}
+          totalSH={totalSH}
+          totalSZ={totalSZ}
+          tech={tech}
+        />
         <StockHeader />
-        <tbody>{rows}</tbody>
+        <tbody>
+          {holdings.map((holding) => (
+            <StockRow {...holding} key={holding.code}></StockRow>
+          ))}
+        </tbody>
       </table>
     </div>
   );
@@ -57,7 +67,7 @@ const SelfRemove = ({ el }) => {
 };
 
 const AccountTables = ({ accounts }) => {
-  const accountsTables = accounts.map(account => (
+  const accountsTables = accounts.map((account) => (
     <StockTable {...account} key={account.name}></StockTable>
   ));
   const totalAll = accounts[0].total;

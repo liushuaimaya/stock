@@ -12,7 +12,7 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "scp -r build/* ecs:~/static/stock/ ",
+    "deploy": "ssh ecs 'rm -rf ~/static/stock/*' && scp -r build/* ecs:~/static/stock/ ",
     "d": "npm run deploy",
     "start": "react-scripts start",
     "build": "react-scripts build",

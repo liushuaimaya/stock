@@ -265,6 +265,30 @@ const STOCK_DATA_SOURCE = [
       },
     ],
   },
+  {
+    name: "闫永照",
+    tech: false,
+    holdings: [
+      {
+        code: "601318",
+        quantity: 1400,
+      },
+      {
+        code: "600236",
+        quantity: 100,
+      },
+    ],
+  },
+  {
+    name: "张欣",
+    tech: false,
+    holdings: [
+      {
+        code: "601318",
+        quantity: 1500,
+      },
+    ],
+  },
 ];
 
 export default STOCK_DATA_SOURCE;

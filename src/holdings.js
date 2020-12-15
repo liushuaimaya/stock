@@ -64,20 +64,8 @@ const STOCK_DATA_SOURCE = [
     tech: true,
     holdings: [
       {
-        code: "600016",
-        quantity: 14160,
-      },
-      {
         code: "000002",
         quantity: 2000,
-      },
-      {
-        code: "000651",
-        quantity: 500,
-      },
-      {
-        code: "600036",
-        quantity: 800,
       },
     ],
   },
@@ -277,6 +265,10 @@ const STOCK_DATA_SOURCE = [
         code: "600236",
         quantity: 100,
       },
+      {
+        code: "000002",
+        quantity: 3500,
+      },
     ],
   },
   {
@@ -286,6 +278,10 @@ const STOCK_DATA_SOURCE = [
       {
         code: "601318",
         quantity: 1500,
+      },
+      {
+        code: "000002",
+        quantity: 3500,
       },
     ],
   },

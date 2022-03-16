@@ -1,0 +1,43 @@
+.stockList {
+  width: 100%;
+  padding: 5px;
+}
+
+@media (min-width: 600px) {
+  .stockList {
+    margin: 20px 0;
+  }
+}
+
+.title {
+  display: flex;
+  align-items: center;
+}
+
+.name {
+  width: 40%;
+}
+
+.tech {
+  width: 30%;
+}
+
+.diff {
+  width: 30%;
+}
+
+thead {
+  background-color: #6c757d22;
+}
+
+.green {
+  background-color: #28a74555;
+}
+
+.red {
+  background-color: #dc354555;
+}
+
+td.right {
+  text-align: right;
+}

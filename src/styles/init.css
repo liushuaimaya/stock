@@ -1,0 +1,32 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 12px;
+  background-color: #e2e2e2;
+}
+
+@media (min-width: 600px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: "SF Pro SC", "HanHei SC", "SF Pro Text", "Myriad Set Pro", "SF Pro Icons", "Apple Legacy Chevron",
+    "PingFang SC", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+#root {
+  overflow: hidden;
+  margin: 0 auto;
+}
+@media (min-width: 600px) {
+  #root {
+    width: 600px;
+  }
+}

@@ -255,7 +255,7 @@ export const holdings: Account[] = [
     holdings: [
       {
         code: "600036",
-        share: 1300,
+        share: 2300,
       },
       {
         code: "601318",

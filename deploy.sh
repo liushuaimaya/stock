@@ -4,13 +4,14 @@
 set -e
 
 # 构建
+rm -rf dist
 pnpm run build
 
 # 进入构建文件夹
 cd dist
 
 # 如果你要部署到自定义域名
-# echo 'noui.cn' > CNAME
+echo 'stock.noui.cn' > CNAME
 
 git init
 git checkout -b main

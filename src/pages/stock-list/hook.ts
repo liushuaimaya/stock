@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { fetchList, Stock } from "../api/tencent";
-import { Account } from "../const";
+import { fetchList, Stock } from "../../api/tencent";
+import { Account } from "../../const";
 
 export const useStockList = (account: Account) => {
   const [loading, setLoading] = useState(false);

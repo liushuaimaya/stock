@@ -4,7 +4,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "deploy": "./deploy.sh"
   },
   "dependencies": {
     "classnames": "^2.3.1",

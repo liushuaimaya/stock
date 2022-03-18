@@ -3,7 +3,7 @@
   width: 100%;
   background-color: #fff;
   border-radius: 3px;
-  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.2);
   border-bottom: 1px solid #e2e2e2;
 }
 
@@ -11,5 +11,5 @@
 .td {
   border: 1px solid gray;
   text-align: center;
-  padding: 2px;
+  padding: 2px 3px;
 }

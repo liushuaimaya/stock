@@ -1,11 +1,10 @@
 import React from "react";
-import cx from "classnames";
-import { AccountWithIsSummary, NEW_STOCK_BASE_SH, NEW_STOCK_BASE_SS } from "../const";
+import { Stock } from "../../api/tencent";
+import { ColumnType, Table } from "../../components/table";
+import { AccountWithIsSummary, NEW_STOCK_BASE_SH, NEW_STOCK_BASE_SS } from "../../const";
 import { useStockList } from "./hook";
-import { Table, ColumnType } from "../components/table";
+import { numberToPercentText, formatToW, getSymbol, isSH } from "./util";
 import classes from "./index.module.css";
-import { Stock } from "../api/tencent";
-import { formatToPercent, formatToW, isSH } from "../util";
 
 const getRowClassName = ({ changePercent }: Stock) => {
   if (changePercent > 0) {
@@ -14,7 +13,7 @@ const getRowClassName = ({ changePercent }: Stock) => {
   if (changePercent < 0) {
     return classes.green;
   }
-  return undefined;
+  return classes.normal;
 };
 
 interface Props {
@@ -31,8 +30,10 @@ const StockList = ({ account }: Props) => {
 
   /** 今日盈亏 */
   const dailyChange = Math.round(list.reduce((res, item) => res + item.changeNumber * item.share, 0));
+  /** 今日盈亏 */
+  const dailyChangeText = `${getSymbol(dailyChange)}${dailyChange}`;
   /** 今日百分比 */
-  const dailyChangePercent = formatToPercent(dailyChange / total);
+  const dailyChangePercentText = numberToPercentText(dailyChange / total);
 
   /** 计算打新缺失市值 */
   const [totalSH, totalSZ] = list.reduce(
@@ -46,7 +47,7 @@ const StockList = ({ account }: Props) => {
   const extendedList = list
     .map((stock) => {
       const value = Math.round(stock.current * stock.share);
-      const percent = formatToPercent(value / total, false);
+      const percent = numberToPercentText(value / total, false);
       return { ...stock, value, percent };
     })
     .sort((a, b) => b.value - a.value);
@@ -59,13 +60,13 @@ const StockList = ({ account }: Props) => {
       dataIndex: "current",
       className: classes.right,
       title: "现价",
-      render: (val: number) => `${val.toFixed(2)}`,
+      render: (value: number) => `${value.toFixed(2)}`,
     },
     {
       dataIndex: "changePercent",
       className: classes.right,
       title: "涨跌幅",
-      render: (val) => `${val}%`,
+      render: (value: number) => numberToPercentText(value / 100),
     },
     { dataIndex: "value", className: classes.right, title: "市值" },
     { dataIndex: "percent", className: classes.right, title: "仓位" },
@@ -77,7 +78,7 @@ const StockList = ({ account }: Props) => {
         {account.isSummary ? (
           <>
             <span className={classes.name}>{`${account.name}: ${Math.round(total)}元`}</span>
-            <span>{`今日盈亏:${dailyChange}(${dailyChangePercent})`}</span>
+            <span>{`今日盈亏:${dailyChangeText}(${dailyChangePercentText})`}</span>
           </>
         ) : (
           <>

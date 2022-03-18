@@ -1,5 +1,3 @@
-import { isSH } from "../../util";
-
 const PREFIX = "https://qt.gtimg.cn/q=";
 
 export interface Stock {
@@ -30,6 +28,8 @@ export const fetchList = async (codeList: string[]) => {
   const text = decoder.decode(buffer);
   return parseResponseText(text);
 };
+
+const isSH = (code: string) => String(code).startsWith("6");
 
 /** 增加前缀 */
 const withPrefix = (code: string) => {

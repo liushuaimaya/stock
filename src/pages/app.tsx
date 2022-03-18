@@ -1,6 +1,6 @@
 import React from "react";
-import { Account } from "./const";
-import { holdings } from "./holdings";
+import { Account } from "../const";
+import { holdings } from "../holdings";
 import StockList from "./stock-list";
 
 const getTotalHoldings = (holdings: Account[]) => {

@@ -1,6 +1,6 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import App from "./app";
+import App from "./pages/app";
 import "./api/tencent";
 import "./styles/init.css";
 
@@ -9,7 +9,7 @@ if (!rootElement) throw new Error("Failed to find the root element");
 const root = createRoot(rootElement);
 
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  // <React.StrictMode>
+  <App />
+  // </React.StrictMode>
 );

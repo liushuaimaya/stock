@@ -1,6 +1,5 @@
 .stockList {
-  width: 100%;
-  padding: 8px;
+  /* padding: 10px; */
 }
 
 .title {
@@ -21,10 +20,6 @@
   width: 30%;
 }
 
-thead {
-  background-color: #f5f6f7;
-}
-
 .green {
   background-color: #b7edb1;
 }
@@ -35,8 +30,4 @@ thead {
 
 .normal {
   background-color: #eff0f1;
-}
-
-td.right {
-  text-align: right;
 }

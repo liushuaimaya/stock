@@ -56,3 +56,44 @@ const parseStock = (stockString: string): Stock => {
     totalMarketValue: Number(infoList[9]),
   };
 };
+
+export const debouncedFetchList = (() => {
+  /** 存已经请求到的stock */
+  const cache = new Map<string, Stock>();
+  /** 待请求的code */
+  const pendingCodeSet = new Set<string>();
+  let timerID: number | undefined = undefined;
+  // 上次请求时间
+  let lastFetchTime = 0;
+  let pendingResolveMap = new Map<Function, string[]>();
+
+  return async (codeList: string[]): Promise<Stock[]> => {
+    return new Promise((resolve, reject) => {
+      pendingResolveMap.set(resolve, codeList);
+      codeList.forEach((code) => {
+        if (!cache.has(code) && !pendingCodeSet.has(code)) {
+          pendingCodeSet.add(code);
+        }
+      });
+      if (timerID) {
+        window.clearTimeout(timerID);
+      }
+      const delay = Math.min(Date.now() - lastFetchTime, 200);
+      console.log("delay", delay);
+      timerID = window.setTimeout(async () => {
+        lastFetchTime = Date.now();
+        const pendingCodeList = [...pendingCodeSet];
+        const result = await fetchList(pendingCodeList);
+        pendingCodeList.forEach((code, index) => {
+          cache.set(code, result[index]);
+        });
+        pendingCodeSet.clear();
+        pendingResolveMap.forEach((list, resolveFn) => {
+          const stockList = list.map((it) => cache.get(it) as Stock);
+          resolveFn(stockList);
+        });
+        pendingResolveMap.clear();
+      }, delay);
+    });
+  };
+})();

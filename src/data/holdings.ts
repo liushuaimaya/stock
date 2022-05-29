@@ -1,4 +1,4 @@
-import { Account } from "./const";
+import { Account } from "../const";
 
 export const holdings: Account[] = [
   {
@@ -157,7 +157,7 @@ export const holdings: Account[] = [
     holdings: [
       {
         code: "002039",
-        share: 4200,
+        share: 3300,
       },
       {
         code: "601318",
@@ -165,11 +165,11 @@ export const holdings: Account[] = [
       },
       {
         code: "600236",
-        share: 5500,
+        share: 5300,
       },
       {
         code: "000002",
-        share: 900,
+        share: 1600,
       },
     ],
   },
@@ -218,12 +218,16 @@ export const holdings: Account[] = [
     tech: false,
     holdings: [
       {
-        code: "000002",
-        share: 800,
+        code: "600519",
+        share: 100,
       },
       {
         code: "601318",
         share: 1500,
+      },
+      {
+        code: "000002",
+        share: 800,
       },
       {
         code: "002304",

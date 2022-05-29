@@ -1,0 +1,22 @@
+/** iPhone */
+.stagProfitOverview {
+  font-size: 6px;
+}
+
+/** iPad */
+@media (min-width: 768px) {
+  .stagProfitOverview {
+    font-size: 12px;
+  }
+}
+
+/** desktop */
+@media (min-width: 1280px) {
+  .stagProfitOverview {
+    font-size: 16px;
+  }
+}
+
+.totalAll {
+  text-align: center;
+}

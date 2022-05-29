@@ -5,29 +5,30 @@
 }
 
 html {
-  font-size: 12px;
   background-color: #f8f9fa;
 }
 
-@media (min-width: 600px) {
-  html {
-    font-size: 16px;
-  }
-}
-
 body {
-  margin: 0;
+  /* margin: 0; */
   font-family: "SF Pro SC", "HanHei SC", "SF Pro Text", "Myriad Set Pro", "SF Pro Icons", "Apple Legacy Chevron",
     "PingFang SC", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 
 #root {
-  overflow: hidden;
+  font-size: 12px;
   margin: 0 auto;
 }
 
-@media (min-width: 600px) {
+/** ipad */
+@media (min-width: 768px) {
   #root {
-    width: 500px;
+    width: 768px;
+  }
+}
+
+/** desktop */
+@media (min-width: 1280px) {
+  #root {
+    width: 1280px;
   }
 }

@@ -1,0 +1,10 @@
+/** iPad */
+@media (min-width: 768px) {
+  .accountList {
+    font-size: 16px;
+  }
+
+  .account {
+    margin-top: 12px;
+  }
+}

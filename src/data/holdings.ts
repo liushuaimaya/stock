@@ -23,7 +23,7 @@ export const holdings: Account[] = [
       },
       {
         code: "002039",
-        share: 700,
+        share: 980,
       },
     ],
   },
@@ -97,6 +97,10 @@ export const holdings: Account[] = [
         code: "601318",
         share: 700,
       },
+      {
+        code: "601919",
+        share: 1500,
+      },
     ],
   },
   {
@@ -109,7 +113,7 @@ export const holdings: Account[] = [
       },
       {
         code: "002039",
-        share: 4000,
+        share: 5600,
       },
       {
         code: "600036",
@@ -127,7 +131,7 @@ export const holdings: Account[] = [
     holdings: [
       {
         code: "002039",
-        share: 5700,
+        share: 7980,
       },
       {
         code: "000002",
@@ -157,7 +161,7 @@ export const holdings: Account[] = [
     holdings: [
       {
         code: "002039",
-        share: 3300,
+        share: 4620,
       },
       {
         code: "601318",
@@ -169,7 +173,11 @@ export const holdings: Account[] = [
       },
       {
         code: "000002",
-        share: 1600,
+        share: 1700,
+      },
+      {
+        code: "600507",
+        share: 4000,
       },
     ],
   },
@@ -183,7 +191,7 @@ export const holdings: Account[] = [
       },
       {
         code: "002039",
-        share: 4000,
+        share: 5600,
       },
       {
         code: "000002",
@@ -211,11 +219,15 @@ export const holdings: Account[] = [
         code: "002304",
         share: 700,
       },
+      {
+        code: "601919",
+        share: 4400,
+      },
     ],
   },
   {
     name: "刘杰",
-    tech: false,
+    tech: true,
     holdings: [
       {
         code: "600519",
@@ -237,7 +249,7 @@ export const holdings: Account[] = [
   },
   {
     name: "王中瑞",
-    tech: false,
+    tech: true,
     holdings: [
       {
         code: "600036",
@@ -255,7 +267,7 @@ export const holdings: Account[] = [
   },
   {
     name: "崔巧琳",
-    tech: false,
+    tech: true,
     holdings: [
       {
         code: "600036",
@@ -304,6 +316,10 @@ export const holdings: Account[] = [
       {
         code: "000002",
         share: 3500,
+      },
+      {
+        code: "601919",
+        share: 7000,
       },
     ],
   },

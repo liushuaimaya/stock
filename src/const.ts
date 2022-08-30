@@ -1,7 +1,7 @@
 export interface Account {
   name: string;
   tech?: boolean;
-  holdings: {
+  stocks: {
     code: string;
     share: number;
   }[];

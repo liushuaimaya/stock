@@ -8,13 +8,13 @@ export const useStockList = (account: Account) => {
 
   useEffect(() => {
     setLoading(true);
-    const codes = account.holdings.map(({ code }) => code);
+    const codes = account.stocks.map(({ code }) => code);
     debouncedFetchList(codes)
-      .then((stockList) =>
+      .then((stockInfoList) =>
         setList(
-          stockList.map((stock) => ({
-            ...stock,
-            share: account.holdings.find((holding) => holding.code === stock.code)?.share || 0,
+          stockInfoList.map((item) => ({
+            ...item,
+            share: account.stocks.find((stock) => stock.code === item.code)?.share || 0,
           }))
         )
       )

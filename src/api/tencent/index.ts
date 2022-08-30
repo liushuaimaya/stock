@@ -79,7 +79,6 @@ export const debouncedFetchList = (() => {
         window.clearTimeout(timerID);
       }
       const delay = Math.min(Date.now() - lastFetchTime, 200);
-      console.log("delay", delay);
       timerID = window.setTimeout(async () => {
         lastFetchTime = Date.now();
         const pendingCodeList = [...pendingCodeSet];

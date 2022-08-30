@@ -1,10 +1,10 @@
 import { Account } from "../const";
 
-export const holdings: Account[] = [
+export const accounts: Account[] = [
   {
     name: "刘帅",
     tech: true,
-    holdings: [
+    stocks: [
       {
         code: "600028",
         share: 6200,
@@ -30,7 +30,7 @@ export const holdings: Account[] = [
   {
     name: "王晓君",
     tech: true,
-    holdings: [
+    stocks: [
       {
         code: "600036",
         share: 1700,
@@ -52,7 +52,7 @@ export const holdings: Account[] = [
   {
     name: "张培",
     tech: true,
-    holdings: [
+    stocks: [
       {
         code: "000002",
         share: 4000,
@@ -66,7 +66,7 @@ export const holdings: Account[] = [
   {
     name: "王振威",
     tech: true,
-    holdings: [
+    stocks: [
       {
         code: "600036",
         share: 2600,
@@ -84,7 +84,7 @@ export const holdings: Account[] = [
   {
     name: "刘媛",
     tech: true,
-    holdings: [
+    stocks: [
       {
         code: "000002",
         share: 5100,
@@ -106,7 +106,7 @@ export const holdings: Account[] = [
   {
     name: "刘丰华",
     tech: true,
-    holdings: [
+    stocks: [
       {
         code: "000002",
         share: 900,
@@ -128,7 +128,7 @@ export const holdings: Account[] = [
   {
     name: "王丽军",
     tech: true,
-    holdings: [
+    stocks: [
       {
         code: "002039",
         share: 7980,
@@ -158,7 +158,7 @@ export const holdings: Account[] = [
   {
     name: "王世艳",
     tech: true,
-    holdings: [
+    stocks: [
       {
         code: "002039",
         share: 4620,
@@ -184,7 +184,7 @@ export const holdings: Account[] = [
   {
     name: "刘文雷",
     tech: true,
-    holdings: [
+    stocks: [
       {
         code: "600036",
         share: 8300,
@@ -202,7 +202,7 @@ export const holdings: Account[] = [
   {
     name: "刘光兴",
     tech: true,
-    holdings: [
+    stocks: [
       {
         code: "000002",
         share: 4200,
@@ -228,7 +228,7 @@ export const holdings: Account[] = [
   {
     name: "刘杰",
     tech: true,
-    holdings: [
+    stocks: [
       {
         code: "600519",
         share: 100,
@@ -250,7 +250,7 @@ export const holdings: Account[] = [
   {
     name: "王中瑞",
     tech: true,
-    holdings: [
+    stocks: [
       {
         code: "600036",
         share: 4000,
@@ -268,7 +268,7 @@ export const holdings: Account[] = [
   {
     name: "崔巧琳",
     tech: true,
-    holdings: [
+    stocks: [
       {
         code: "600036",
         share: 2300,
@@ -290,7 +290,7 @@ export const holdings: Account[] = [
   {
     name: "闫永照",
     tech: false,
-    holdings: [
+    stocks: [
       {
         code: "601318",
         share: 1400,
@@ -308,7 +308,7 @@ export const holdings: Account[] = [
   {
     name: "张欣",
     tech: false,
-    holdings: [
+    stocks: [
       {
         code: "601318",
         share: 1500,

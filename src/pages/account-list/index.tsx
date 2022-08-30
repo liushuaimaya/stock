@@ -1,15 +1,15 @@
 import React from "react";
 import { Account } from "../../const";
-import { holdings } from "../../data/holdings";
+import { accounts } from "../../data/accounts";
 import { AccountTable } from "./account-table";
 import styles from "./index.module.css";
 
-const getTotalHoldings = (holdings: Account[]) => {
-  const res = holdings
-    .map((it) => it.holdings)
+const getTotalStocks = (accounts: Account[]) => {
+  const res = accounts
+    .map(({ stocks }) => stocks)
     .reduce(
-      (res, holding) => {
-        holding.forEach((item) => {
+      (res, stock) => {
+        stock.forEach((item) => {
           const resItem = res.find((it) => it.code === item.code);
           if (!resItem) res.push({ ...item });
           else resItem.share += item.share;
@@ -18,15 +18,15 @@ const getTotalHoldings = (holdings: Account[]) => {
       },
       [{ code: "399300", share: 0 }]
     );
-  console.log("res", res);
   return res;
 };
 
 export const AccountList = () => {
   const accountInfoList = [
-    { name: "Total", isSummary: true, holdings: getTotalHoldings(holdings) },
-    ...holdings.map(({ name, holdings }) => ({ name, isSummary: false, holdings })),
+    { name: "Total", isSummary: true, stocks: getTotalStocks(accounts) },
+    ...accounts.map((account) => ({ ...account, isSummary: false })),
   ];
+
   return (
     <div className={styles.accountList}>
       {accountInfoList.map((account) => (

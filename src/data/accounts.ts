@@ -319,7 +319,7 @@ export const accounts: Account[] = [
       },
       {
         code: "601919",
-        share: 7000,
+        share: 10000,
       },
     ],
   },

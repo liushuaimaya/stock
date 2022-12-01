@@ -18,10 +18,6 @@ export const accounts: Account[] = [
         share: 10900,
       },
       {
-        code: "000651",
-        share: 1400,
-      },
-      {
         code: "002039",
         share: 980,
       },
@@ -77,7 +73,7 @@ export const accounts: Account[] = [
       },
       {
         code: "601088",
-        share: 6000,
+        share: 4300,
       },
     ],
   },
@@ -177,7 +173,7 @@ export const accounts: Account[] = [
       },
       {
         code: "600507",
-        share: 4000,
+        share: 4200,
       },
     ],
   },
@@ -292,6 +288,10 @@ export const accounts: Account[] = [
     tech: false,
     stocks: [
       {
+        code: "600519",
+        share: 100,
+      },
+      {
         code: "601318",
         share: 1400,
       },
@@ -319,7 +319,7 @@ export const accounts: Account[] = [
       },
       {
         code: "601919",
-        share: 10000,
+        share: 20000,
       },
     ],
   },

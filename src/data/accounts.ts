@@ -307,7 +307,7 @@ export const accounts: Account[] = [
   },
   {
     name: "张欣",
-    tech: false,
+    tech: true,
     stocks: [
       {
         code: "601318",

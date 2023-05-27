@@ -7,6 +7,12 @@ export interface Account {
   }[];
 }
 
+export enum AccountName {
+  LIUSHUAI = "liushuai",
+  WANGXIAOJUN = "wangxiaojun",
+  ALL = "all",
+}
+
 export interface AccountWithIsSummary extends Account {
   isSummary: boolean;
 }

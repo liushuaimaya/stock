@@ -1,6 +1,5 @@
 import React from "react";
 import { Account } from "../../const";
-import { accounts } from "../../data/accounts";
 import { AccountTable } from "./account-table";
 import styles from "./index.module.css";
 
@@ -21,7 +20,11 @@ const getTotalStocks = (accounts: Account[]) => {
   return res;
 };
 
-export const AccountList = () => {
+interface Props {
+  accounts: Account[];
+}
+
+export const AccountList = ({ accounts }: Props) => {
   const accountInfoList = [
     { name: "Total", isSummary: true, stocks: getTotalStocks(accounts) },
     ...accounts.map((account) => ({ ...account, isSummary: false })),

@@ -173,7 +173,7 @@ const ACCOUNTS_MAP = {
     },
     {
       name: "FZQ",
-      tech: false,
+      tech: true,
       stocks: [
         {
           code: "600519",
@@ -183,7 +183,27 @@ const ACCOUNTS_MAP = {
     },
     {
       name: "FRZ",
-      tech: false,
+      tech: true,
+      stocks: [
+        {
+          code: "600519",
+          share: 100,
+        },
+      ],
+    },
+    {
+      name: "FYL",
+      tech: true,
+      stocks: [
+        {
+          code: "600519",
+          share: 100,
+        },
+      ],
+    },
+    {
+      name: "HSM",
+      tech: true,
       stocks: [
         {
           code: "600519",
@@ -331,7 +351,7 @@ const ACCOUNTS_MAP = {
     },
     {
       name: "闫永照",
-      tech: false,
+      tech: true,
       stocks: [
         {
           code: "600519",

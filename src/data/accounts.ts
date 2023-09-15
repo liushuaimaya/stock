@@ -41,6 +41,10 @@ const ACCOUNTS_MAP = {
           code: "600507",
           share: 5100,
         },
+        {
+          code: "600519",
+          share: 100,
+        },
       ],
     },
     {
@@ -62,6 +66,10 @@ const ACCOUNTS_MAP = {
         {
           code: "601919",
           share: 1500,
+        },
+        {
+          code: "600519",
+          share: 100,
         },
       ],
     },
@@ -233,6 +241,10 @@ const ACCOUNTS_MAP = {
           code: "000651",
           share: 400,
         },
+        {
+          code: "600519",
+          share: 100,
+        },
       ],
     },
     {
@@ -385,6 +397,13 @@ export const ACCOUNT_DETAILS: Record<AccountName, AccountDetail> = {
   },
   [AccountName.WANGXIAOJUN]: {
     path: "/",
-    accounts: ACCOUNTS_MAP[AccountName.WANGXIAOJUN],
+    accounts: ACCOUNTS_MAP[AccountName.WANGXIAOJUN].map((account) => {
+      if (account.name === "王晓君") {
+        const { stocks: originStocks, ...rest } = account;
+        const stocks = originStocks.map((s) => (s.code === "600519" ? { ...s, share: s.share - 100 } : s));
+        return { ...rest, stocks };
+      }
+      return account;
+    }),
   },
 };

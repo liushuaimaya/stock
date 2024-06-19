@@ -393,13 +393,6 @@ export const ACCOUNT_DETAILS: Record<AccountName, AccountDetail> = {
   },
   [AccountName.WANGXIAOJUN]: {
     path: "/",
-    accounts: ACCOUNTS_MAP[AccountName.WANGXIAOJUN].map((account) => {
-      if (account.name === "王晓君") {
-        const { stocks: originStocks, ...rest } = account;
-        const stocks = originStocks.map((s) => (s.code === "600519" ? { ...s, share: s.share - 100 } : s));
-        return { ...rest, stocks };
-      }
-      return account;
-    }),
+    accounts: ACCOUNTS_MAP[AccountName.WANGXIAOJUN],
   },
 };

@@ -16,8 +16,8 @@ const ACCOUNTS_MAP = {
           share: 6200,
         },
         {
-          code: "600236",
-          share: 13890,
+          code: "600519",
+          share: 100,
         },
         {
           code: "000002",
@@ -44,6 +44,10 @@ const ACCOUNTS_MAP = {
         {
           code: "600519",
           share: 100,
+        },
+        {
+          code: "601919",
+          share: 3500,
         },
       ],
     },
@@ -267,7 +271,7 @@ const ACCOUNTS_MAP = {
       stocks: [
         {
           code: "002039",
-          share: 7980,
+          share: 5980,
         },
         {
           code: "000002",
@@ -275,19 +279,11 @@ const ACCOUNTS_MAP = {
         },
         {
           code: "600036",
-          share: 2700,
-        },
-        {
-          code: "600236",
-          share: 3380,
-        },
-        {
-          code: "600674",
-          share: 1000,
-        },
-        {
-          code: "600886",
           share: 1700,
+        },
+        {
+          code: "600519",
+          share: 100,
         },
       ],
     },
@@ -305,7 +301,7 @@ const ACCOUNTS_MAP = {
         },
         {
           code: "600236",
-          share: 5300,
+          share: 5100,
         },
         {
           code: "000002",
@@ -313,7 +309,7 @@ const ACCOUNTS_MAP = {
         },
         {
           code: "600507",
-          share: 4200,
+          share: 2300,
         },
       ],
     },

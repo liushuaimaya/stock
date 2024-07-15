@@ -82,6 +82,10 @@ const ACCOUNTS_MAP = {
       tech: true,
       stocks: [
         {
+          code: "600519",
+          share: 100,
+        },
+        {
           code: "000002",
           share: 900,
         },

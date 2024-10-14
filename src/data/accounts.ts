@@ -280,24 +280,16 @@ const ACCOUNTS_MAP = {
       tech: true,
       stocks: [
         {
+          code: "600519",
+          share: 100,
+        },
+        {
           code: "002039",
           share: 4620,
         },
         {
-          code: "601318",
-          share: 1400,
-        },
-        {
-          code: "600236",
-          share: 5100,
-        },
-        {
           code: "000002",
           share: 1700,
-        },
-        {
-          code: "600507",
-          share: 2300,
         },
       ],
     },
@@ -306,8 +298,8 @@ const ACCOUNTS_MAP = {
       tech: true,
       stocks: [
         {
-          code: "600036",
-          share: 4000,
+          code: "600519",
+          share: 100,
         },
         {
           code: "002304",

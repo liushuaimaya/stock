@@ -1,27 +1,6 @@
-#!/usr/bin/env sh
+# scp -i "ubuntu.pem" -r /Users/jaypan/workspace/nginx/client/build ubuntu@ec2-15-168-39-19.ap-northeast-3.compute.amazonaws.com:/var/www/html/
 
-# 发生错误时终止
-set -e
-
-# 构建
 rm -rf dist
 pnpm run build
-
-# 进入构建文件夹
-cd dist
-
-# 如果你要部署到自定义域名
-echo 'stock.noui.cn' > CNAME
-
-git init
-git checkout -b main
-git add -A
-git commit -m 'deploy'
-
-# 如果你要部署在 https://<USERNAME>.github.io
-# git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git main
-
-# 如果你要部署在 https://<USERNAME>.github.io/<REPO>
-git push -f git@github.com:liushuaimaya/stock.git main:gh-pages
-
-cd -
+ssh root@ecs "rm -rf /home/stock/*"
+scp -r dist/* root@ecs:/home/stock/

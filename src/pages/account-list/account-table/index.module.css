@@ -9,15 +9,11 @@
 }
 
 .name {
-  width: 40%;
-}
-
-.tech {
-  width: 30%;
+  width: 50%;
 }
 
 .diff {
-  width: 30%;
+  width: 50%;
 }
 
 .green {

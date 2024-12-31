@@ -39,7 +39,7 @@ export const AccountTable = ({ account, className }: Props) => {
     })
     .sort((a, b) => b.value - a.value);
 
-  const columns: ColumnType<typeof list[number]>[] = [
+  const columns: ColumnType<(typeof list)[number]>[] = [
     { dataIndex: "code", title: "证券代码" },
     { dataIndex: "name", title: "股票名称" },
     { dataIndex: "share", title: "持仓" },
@@ -89,7 +89,6 @@ export const AccountTable = ({ account, className }: Props) => {
     return (
       <>
         <span className={classes.name}>{`${account.name}: ${Math.round(total)}元`}</span>
-        <span className={classes.tech}>{`科创: ${account.tech ? "✅" : "❌"}`}</span>
         <span className={classes.diff}>{` 沪: ${formatToW(totalSH)}   深: ${formatToW(totalSZ)}`}</span>
       </>
     );

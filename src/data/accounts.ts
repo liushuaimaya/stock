@@ -9,7 +9,6 @@ const ACCOUNTS_MAP = {
   [AccountName.LIUSHUAI]: [
     {
       name: "刘帅",
-      tech: true,
       stocks: [
         {
           code: "600519",
@@ -27,7 +26,6 @@ const ACCOUNTS_MAP = {
     },
     {
       name: "张培",
-      tech: true,
       stocks: [
         {
           code: "000002",
@@ -49,7 +47,6 @@ const ACCOUNTS_MAP = {
     },
     {
       name: "刘媛",
-      tech: true,
       stocks: [
         {
           code: "000002",
@@ -63,7 +60,6 @@ const ACCOUNTS_MAP = {
     },
     {
       name: "刘丰华",
-      tech: true,
       stocks: [
         {
           code: "600519",
@@ -81,7 +77,6 @@ const ACCOUNTS_MAP = {
     },
     {
       name: "刘文雷",
-      tech: true,
       stocks: [
         {
           code: "600519",
@@ -103,7 +98,6 @@ const ACCOUNTS_MAP = {
     },
     {
       name: "刘光兴",
-      tech: true,
       stocks: [
         {
           code: "600519",
@@ -129,11 +123,10 @@ const ACCOUNTS_MAP = {
     },
     {
       name: "刘杰",
-      tech: true,
       stocks: [
         {
           code: "600519",
-          share: 100,
+          share: 200,
         },
         {
           code: "601318",
@@ -151,7 +144,6 @@ const ACCOUNTS_MAP = {
     },
     {
       name: "张欣",
-      tech: true,
       stocks: [
         {
           code: "600519",
@@ -173,7 +165,6 @@ const ACCOUNTS_MAP = {
     },
     {
       name: "FZQ",
-      tech: true,
       stocks: [
         {
           code: "600519",
@@ -183,7 +174,6 @@ const ACCOUNTS_MAP = {
     },
     {
       name: "FRZ",
-      tech: true,
       stocks: [
         {
           code: "600519",
@@ -193,7 +183,6 @@ const ACCOUNTS_MAP = {
     },
     {
       name: "FYL",
-      tech: true,
       stocks: [
         {
           code: "600519",
@@ -203,7 +192,6 @@ const ACCOUNTS_MAP = {
     },
     {
       name: "HSM",
-      tech: true,
       stocks: [
         {
           code: "600519",
@@ -215,7 +203,6 @@ const ACCOUNTS_MAP = {
   [AccountName.WANGXIAOJUN]: [
     {
       name: "王晓君",
-      tech: true,
       stocks: [
         {
           code: "600036",
@@ -237,7 +224,6 @@ const ACCOUNTS_MAP = {
     },
     {
       name: "王振威",
-      tech: true,
       stocks: [
         {
           code: "600036",
@@ -255,7 +241,6 @@ const ACCOUNTS_MAP = {
     },
     {
       name: "王丽军",
-      tech: true,
       stocks: [
         {
           code: "002039",
@@ -273,7 +258,6 @@ const ACCOUNTS_MAP = {
     },
     {
       name: "王世艳",
-      tech: true,
       stocks: [
         {
           code: "600519",
@@ -291,7 +275,6 @@ const ACCOUNTS_MAP = {
     },
     {
       name: "王中瑞",
-      tech: true,
       stocks: [
         {
           code: "600519",
@@ -309,7 +292,6 @@ const ACCOUNTS_MAP = {
     },
     {
       name: "崔巧琳",
-      tech: true,
       stocks: [
         {
           code: "600519",
@@ -327,7 +309,6 @@ const ACCOUNTS_MAP = {
     },
     {
       name: "闫永照",
-      tech: true,
       stocks: [
         {
           code: "600519",

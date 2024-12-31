@@ -46,7 +46,9 @@ export function Table<T extends Record<string, any>>({
           return (
             <tr key={rowIndex} className={rowClassName?.(record, rowIndex)}>
               {columns.map(({ className, dataIndex, render }, colIndex) => {
-                const content = render ? render(record[dataIndex], record, rowIndex) : record[dataIndex];
+                const content = render
+                  ? render(record[dataIndex], record, rowIndex)
+                  : record[dataIndex];
                 return (
                   <td key={colIndex} className={cx(className, classes.td)}>
                     {content}

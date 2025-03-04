@@ -218,7 +218,7 @@ const ACCOUNTS_MAP = {
         },
         {
           code: "600519",
-          share: 200,
+          share: 300,
         },
       ],
     },

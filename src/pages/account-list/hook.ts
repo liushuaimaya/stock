@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { debouncedFetchList, Stock } from "../../api/tencent";
+import { debouncedFetchStockList, Stock } from "../../api/tencent";
 import { Account } from "../../const";
 
 export const useStockList = (account: Account) => {
@@ -9,7 +9,7 @@ export const useStockList = (account: Account) => {
   useEffect(() => {
     setLoading(true);
     const codes = account.stocks.map(({ code }) => code);
-    debouncedFetchList(codes)
+    debouncedFetchStockList(codes)
       .then((stockInfoList) =>
         setList(
           stockInfoList.map((item) => ({

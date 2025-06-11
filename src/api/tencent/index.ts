@@ -1,4 +1,4 @@
-const PREFIX = "https://qt.gtimg.cn/q=";
+const API_PREFIX = "https://qt.gtimg.cn/q=";
 
 export interface Stock {
   /** 股票名称 */
@@ -20,78 +20,77 @@ export interface Stock {
 }
 
 /** 获取股票信息 */
-export const fetchList = async (codeList: string[]) => {
-  const url = `${PREFIX}${codeList.map(withPrefix).join(",")}`;
+export const fetchStockList = async (codes: string[]): Promise<Stock[]> => {
+  const url = `${API_PREFIX}${codes.map(addPrefix).join(",")}`;
   const response = await fetch(url);
   const buffer = await response.arrayBuffer();
-  const decoder = new TextDecoder("GBK");
-  const text = decoder.decode(buffer);
-  return parseResponseText(text);
+  const text = new TextDecoder("GBK").decode(buffer);
+  return parseStockData(text);
 };
 
-const isSH = (code: string) => String(code).startsWith("6");
+const isShanghaiStock = (code: string): boolean => code.startsWith("6");
 
 /** 增加前缀 */
-const withPrefix = (code: string) => {
-  return `s_${isSH(code) ? "sh" : "sz"}${code}`;
+const addPrefix = (code: string): string => {
+  return `s_${isShanghaiStock(code) ? "sh" : "sz"}${code}`;
 };
 
-/** parse: 响应text -> 股票信息列表 */
-const parseResponseText = (responseText: string) => {
-  const stockStrings = responseText.split(";").slice(0, -1);
-  return stockStrings.map(parseStock);
+/** 解析响应文本为股票信息列表 */
+const parseStockData = (data: string): Stock[] => {
+  return data.split(";").slice(0, -1).map(parseSingleStock);
 };
 
-/** parse: 单个股票信息 */
-const parseStock = (stockString: string): Stock => {
-  const infoList = stockString.split("~");
+/** 解析单个股票信息 */
+const parseSingleStock = (data: string): Stock => {
+  const fields = data.split("~");
   return {
-    name: infoList[1],
-    code: infoList[2],
-    current: Number(infoList[3]),
-    changeNumber: Number(infoList[4]),
-    changePercent: Number(infoList[5]),
-    volume: Number(infoList[6]),
-    businessVolume: Number(infoList[7]),
-    totalMarketValue: Number(infoList[9]),
+    name: fields[1],
+    code: fields[2],
+    current: parseFloat(fields[3]),
+    changeNumber: parseFloat(fields[4]),
+    changePercent: parseFloat(fields[5]),
+    volume: parseInt(fields[6], 10),
+    businessVolume: parseFloat(fields[7]),
+    totalMarketValue: parseFloat(fields[9]),
   };
 };
 
-export const debouncedFetchList = (() => {
-  /** 存已经请求到的stock */
-  const cache = new Map<string, Stock>();
-  /** 待请求的code */
-  const pendingCodeSet = new Set<string>();
-  let timerID: number | undefined = undefined;
-  // 上次请求时间
-  let lastFetchTime = 0;
-  let pendingResolveMap = new Map<Function, string[]>();
+/**
+ * 防抖获取股票信息列表
+ * @returns {Function} - 返回一个函数，该函数接受股票代码数组并返回股票信息列表的Promise
+ */
+export const debouncedFetchStockList = (() => {
+  const stockCache = new Map<string, Stock>();
+  const pendingCodes = new Set<string>();
+  let timerId: number | undefined;
+  let lastFetchTimestamp = 0;
+  const resolveMap = new Map<Function, string[]>();
 
-  return async (codeList: string[]): Promise<Stock[]> => {
-    return new Promise((resolve, reject) => {
-      pendingResolveMap.set(resolve, codeList);
-      codeList.forEach((code) => {
-        if (!cache.has(code) && !pendingCodeSet.has(code)) {
-          pendingCodeSet.add(code);
+  return async (codes: string[]): Promise<Stock[]> => {
+    return new Promise((resolve) => {
+      resolveMap.set(resolve, codes);
+      codes.forEach((code) => {
+        if (!stockCache.has(code) && !pendingCodes.has(code)) {
+          pendingCodes.add(code);
         }
       });
-      if (timerID) {
-        window.clearTimeout(timerID);
+      if (timerId) {
+        window.clearTimeout(timerId);
       }
-      const delay = Math.min(Date.now() - lastFetchTime, 200);
-      timerID = window.setTimeout(async () => {
-        lastFetchTime = Date.now();
-        const pendingCodeList = [...pendingCodeSet];
-        const result = await fetchList(pendingCodeList);
-        pendingCodeList.forEach((code, index) => {
-          cache.set(code, result[index]);
+      const delay = Math.min(Date.now() - lastFetchTimestamp, 200);
+      timerId = window.setTimeout(async () => {
+        lastFetchTimestamp = Date.now();
+        const codesToFetch = Array.from(pendingCodes);
+        const stocks = await fetchStockList(codesToFetch);
+        codesToFetch.forEach((code, index) => {
+          stockCache.set(code, stocks[index]);
         });
-        pendingCodeSet.clear();
-        pendingResolveMap.forEach((list, resolveFn) => {
-          const stockList = list.map((it) => cache.get(it) as Stock);
+        pendingCodes.clear();
+        resolveMap.forEach((codeList, resolveFn) => {
+          const stockList = codeList.map((code) => stockCache.get(code));
           resolveFn(stockList);
         });
-        pendingResolveMap.clear();
+        resolveMap.clear();
       }, delay);
     });
   };

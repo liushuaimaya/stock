@@ -193,10 +193,6 @@ const ACCOUNTS_MAP = {
       name: "王晓君",
       stocks: [
         {
-          code: "600036",
-          share: 1700,
-        },
-        {
           code: "000002",
           share: 14300,
         },
@@ -206,7 +202,7 @@ const ACCOUNTS_MAP = {
         },
         {
           code: "600519",
-          share: 300,
+          share: 400,
         },
       ],
     },

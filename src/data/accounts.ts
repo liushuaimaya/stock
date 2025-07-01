@@ -12,7 +12,7 @@ const ACCOUNTS_MAP = {
       stocks: [
         {
           code: "600519",
-          share: 300,
+          share: 400,
         },
         {
           code: "000002",

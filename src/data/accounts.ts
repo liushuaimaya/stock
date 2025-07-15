@@ -202,17 +202,13 @@ const ACCOUNTS_MAP = {
         },
         {
           code: "600519",
-          share: 400,
+          share: 500,
         },
       ],
     },
     {
       name: "王振威",
       stocks: [
-        {
-          code: "600036",
-          share: 1300,
-        },
         {
           code: "000002",
           share: 11100,
